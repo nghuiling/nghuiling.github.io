@@ -11,11 +11,12 @@ body {
 
 
 .faded {
-  color: rgba(0, 0, 0, 0.8); 
+  color: rgba(0,0, 0, 0.8); 
 }
 
 header.startup {
   background-position: center;
+/*  background-image: url("header.jpg");*/
   background-color: #FEE6EE;
   background-size: cover;
   height: 100%;
