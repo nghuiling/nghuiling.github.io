@@ -1,5 +1,30 @@
+@import url(https://use.fontawesome.com/releases/v5.7.0/css/all.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/css/mdb.min.css);
+
+
 .responsive {
   width: 100%;
   height: auto;
   max-width: 700px;
 }
+
+
+pre code {
+	font-family: Consolas,"courier new";
+	color: purple;
+  	background-color: #f1f1f1;
+  	border: 1px solid #999000;
+ 	display: block;
+ 	padding: 10px;
+}
+
+
+
+footer {
+  text-align: center;
+  padding: 5px;
+  background:linear-gradient(to right, #E0B1CB, #9F86C0);
+  color: white;
+}
+
