@@ -13,7 +13,7 @@
 
 pre code {
 	font-family: Consolas,"courier new";
-	color: purple;
+	color: crimson;
   	background-color: #f1f1f1;
   	border: 1px solid #E8E8E8;
  	display: block;
@@ -23,9 +23,24 @@ pre code {
 
 
 footer {
+
+  width: 100%;
   text-align: center;
   padding: 5px;
   background:linear-gradient(to right, #E0B1CB, #9F86C0);
   color: white;
 }
 
+footer1 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  background:linear-gradient(to right, #E0B1CB, #9F86C0);
+  color: white;
+}
+html, body {
+    height:100%;
+}
