@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ng Hui Ling</title>
+  <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+
+<body>
+
+<!-- navigation -->
+ <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="/">Ng Hui Ling</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">About</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="projects.html">Projects</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="blog.html">Blog</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br/>
+<br/>
+
+
+<!-- panel -->
+<div class="jumbotron" style="background:linear-gradient(to right, #E0B1CB, #9F86C0);color:#FFF">
+  <div class="container">
+    <h2 class="display-3">Blog: Flask</h2>
+    <p></p>
+  </div>
+</div>
+<br/>
+
+
+<!-- content -->
+<div class="container" >
+<!-- blog1 -->
+<h1>#1: How to build a Flask App</h1>
+<h5>Date: 5 May 2020</h5><br>
+
+<b>Step 1: Ensure you have Python on your system environment variables </b><br><br>
+I added the following to my system environment variables path:
+<b><text style='color:#F89520'><br>
+C:\Users\User\anaconda3 <br>
+C:\Users\User\anaconda3\Scripts<br>
+C:\Users\User\anaconda3\Library\bin<br>
+C:\Users\User\anaconda3\Library\mingw-w64\bin<br><br></b></text>
+ To test the above, in Command Prompt:<br>
+> <b><text style='color:#F89520'>cd C:\Users\User</text></b> <br>
+> <b><text style='color:#F89520'>python --version</text></b><br>
+Python version should appear.
+<br><br><br>
+
+<b>Step 2: Install a virtual environment so that your installations for each project will be contained in that environment</b> <br><br>
+In Command Prompt:<br>
+> <b><text style='color:#F89520'>pip install virtualenv</text></b> 
+<br><br><br>
+
+<b>Step 3: Create a folder (e.g. named 'test' on your Desktop) for your app and build a virtual environment (e.g. named 'env')</b> <br><br>
+In Command Prompt:<br>
+> <b><text style='color:#F89520'>cd C:\Users\User\Desktop\test</text></b><br>
+> <b><text style='color:#F89520'>virtualenv env</text></b>
+<br><br><br>
+
+<b>Step 4: Activate your 'env' environment and start installing Flask (and other things you want)</b> <br><br>
+In Command Prompt:<br>
+> <b><text style='color:#F89520'>cd C:\Users\User\Desktop\test\env\Scripts</text></b><br>
+> <b><text style='color:#F89520'>activate.bat</text></b><br>
+> <b><text style='color:#F89520'>pip install Flask</text></b>
+<br><br><br>
+
+<b>Step 5: Create an app.py file in the 'test' folder</b> <br><br>
+Insert the following in the app.py file:<br>
+
+
+<pre>
+  <code>
+from flask import Flask, render_template
+
+app = Flask(__name__)
+@app.route('/')
+
+def index():
+  return "Hello!!!!"
+  
+if __name__ =="__main__":
+  app.run(debug=True)
+  </code>
+</pre>
+
+
+<b>Step 6: Run your app!</b> <br><br>
+In Command Prompt:<br>
+> <b><text style='color:#F89520'>cd C:\Users\User\Desktop\test</text></b><br>
+> <b><text style='color:#F89520'>python app.py</text></b><br>
+Go to http://127.0.0.1:5000/ on your browser to view: Hello!!!!
+<br><br><br>
+
+<b>Best practices for Flask app folder's directory:</b> <br>
+> <b><text style='color:#F89520'>env</text></b><br>
+> <b><text style='color:#F89520'>static>css>main.css</text></b><br>
+> <b><text style='color:#F89520'>static>js</text></b><br>
+> <b><text style='color:#F89520'>templates>index.html</text></b><br>
+> <b><text style='color:#F89520'>app.py</text></b><br><br>
+This is just the beginning of building a Flask app, many more to come!
+<br>
+<br>
+<br>
+
+</div>
+
+
+<footer>
+  <p>Copyright &copy; 2020 Ng Hui Ling</p>
+</footer>
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/js/mdb.min.js"></script>
+
+</body>
+</html>

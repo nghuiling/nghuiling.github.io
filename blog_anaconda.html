@@ -39,7 +39,7 @@
 <!-- panel -->
 <div class="jumbotron" style="background:linear-gradient(to right, #E0B1CB, #9F86C0);color:#FFF">
   <div class="container">
-    <h2 class="display-3">Blog</h2>
+    <h2 class="display-3">Blog: Anaconda</h2>
     <p></p>
   </div>
 </div>
@@ -49,17 +49,24 @@
 <!-- content -->
 <div class="container" >
 <!-- blog1 -->
-<b>Anaconda:</b><br>
-<b><a href='blog_anaconda.html'>How to set up a new conda environment</a></b><br><br>
-<b>Django:</b><br>
-<b><a href='blog_django.html'>How to build a Django App</a></b><br><br>
+<h1>#1: How to set up a new conda environment</h1>
+<h5>Date: 6 Jan 2021</h5><br>
 
-<b>Flask:</b><br>
-<b><a href='blog_flask.html'>How to build a Flask App</a></b><br><br>
 
-<b>GitHub:</b><br>
-<b><a href='blog_github.html'>How to push projects to GitHub</a></b><br>
+Open Anaconda Prompt and type the following:
 
+<pre>
+  <code>
+conda create -n <u>NAME</u> python=<u>VERSION</u>
+conda activate <u>NAME</u>
+
+pip install ipykernel
+python -m ipykernel install --user --name <u>NAME</u> --display-name <u>NAME</u>
+
+#pip install your items#
+
+  </code>
+</pre>
 
 <br>
 <br>
