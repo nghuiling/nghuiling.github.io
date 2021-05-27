@@ -68,6 +68,16 @@ python -m ipykernel install --user --name <u>NAME</u> --display-name <u>NAME</u>
   </code>
 </pre>
 
+For standalone, install individual files (.whl or .tar.gz) in a location (e.g. D:\Packages) and type the following in Anaconda Prompt:
+
+<pre>
+  <code>
+conda create --prefix=C:\ProgramData\Anaconda3\envs\<u>NAME</u> --clone root --offline
+pip install <u>NAME OF PACKAGE</u> --no-index -f D:\Packages
+
+  </code>
+</pre>
+
 <br>
 <br>
 <br>
