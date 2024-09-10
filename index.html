@@ -1,106 +1,418 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Ng Hui Ling</title>
-	<meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
+<html lang="en">
+
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <title>Ng Hui Ling</title>
+
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/logo.png" />
+
+        <!-- Bootstrap CSS and Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+        <!-- Programming languages icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+          
+
+        <!-- Google fonts-->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Coming+Soon:400" rel="stylesheet" type="text/css" /> -->
+        <!-- SimpleLightbox plugin CSS-->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" /> -->
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+
 
 
 <body>
 
+
 <!-- navigation -->
- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="/">Ng Hui Ling</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-bg">
+  <a class="navbar-brand" href="#"><img src="assets/logo.png" class='nav-logo'></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
       <li class="nav-item">
-        <a class="nav-link" href="index.html">About</a>
+        <a class="nav-link" href="#project">Project</a>
       </li>
-       <li class="nav-item">
-        <a class="nav-link" href="projects.html">Projects</a>
       </li>
-       <li class="nav-item">
-        <a class="nav-link" href="blog.html">Blog</a>
+      <li class="nav-item">
+        <a class="nav-link" href="#about">About</a>
+      </li>
+
+<!--       <li class="nav-item">
+        <a class="nav-link" href="#blog">Blog</a>
+      </li> -->
+
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">Contact</a>
       </li>
     </ul>
   </div>
 </nav>
-<br/>
-<br/>
 
 
-<!-- panel -->
-<div class="jumbotron" style="background:linear-gradient(to right, #E0B1CB, #9F86C0);color:#FFF">
-	<div class="container">
-    <h2 class="display-3">About Me</h2>
-    <p></p>
+<!-- star background -->
+
+<div style="background-image: url('assets/background/stars.gif');
+             background-size: cover; height:480px; padding-top:80px;">
+
+
+<!-- masthead -->
+<div class="container center first">
+  <h1>Hi, I am Hui Ling</h1>
+  <hr class="divider" />
+  <h4>Welcome to my universe!</h4>
+<span class="text1">I love to dream, learn, design, and build things.</span>
+
+  </p>
+
+
+  <div class='button-style'>
+  <a href="#project"><button type="button" value=''>EXPLORE MY PROJECTS</button></a>
+</div>
+
+</div>
+
+
+
+
+
+<!-- project -->
+<div id="project">
+    <div class="container center">
+  <h3>Projects</h3>
+  <hr class="divider" />
+
+
+<p></p>
+
+
+          <div id="btncontainer" class="filter">
+            <a class="btn btn-active" href="#all">Show all</a>
+            <a class="btn" href="#chat">Chatbot</a>
+            <a class="btn" href="#game">Game</a>
+            <a class="btn" href="#ds">Machine Learning</a>
+            <!-- <a class="btn" href="#ux">UX/UI Design</a> -->
+            <a class="btn" href="#web">Web Application</a>
+
+          </div>
+
+          <!-- Gallery Section Start -->
+
+          <div class="gallery sets">
+
+
+            <a class="all ds overlay"><img src="assets/project/meal.png"/>
+              <div class="fadedbox">
+                <div class="title text">
+                  <div class="icon">
+                    <i class="devicon-python-plain" style="font-size: 1.8em;opacity: 0.6;" alt="python" title="python"></i>                    
+     </div>
+                  <p><h4>Meal Planner</h4></p>
+                  <p>A reinforcement learning approach for meal planning. </p>
+                  <button>COMING SOON</button>
+                  <!-- <button onclick="window.open('mealplanner.html', '_blank')">COMING SOON</button> -->
+                </div>
+              </div>
+            </a>
+
+
+            <a class="all web overlay"><img src="assets/project/weather.png"/>
+              <div class="fadedbox">
+                <div class="title text">
+                  <div class="icon">
+                    <i class="devicon-python-plain" style="font-size: 1.8em;opacity: 0.6;" alt="python" title="python"></i>                    
+                    <i class="devicon-django-plain" style="font-size: 1.8em;opacity: 0.6;" alt="django" title="django"></i>          
+                 </div>
+                  <p><h4>Daily Weather Forecast</h4></p>
+                  <p>Used an open source API, OpenWeather, for daily weather forecast. </p>
+                  <button>COMING SOON</button>
+                  <!-- <button onclick="window.open('https://huiling-titanic.herokuapp.com', '_blank')">SEE DEMO</button> -->
+                </div>
+              </div>
+            </a>
+
+            <a class="all ds web overlay"><img src="assets/project/sentiment.png"/>
+              <div class="fadedbox">
+                <div class="title text">
+                  <div class="icon">
+                    <i class="devicon-python-plain" style="font-size: 1.8em;opacity: 0.6;" alt="python" title="python"></i>                    
+                    <i class="devicon-flask-original" style="font-size: 1.8em;opacity: 0.6;" alt="flask" title="flask"></i>          
+                 </div>
+                  <p><h4>Sentiment Analysis</h4></p>
+                  <p>Used an open source CNN Classifier in Stanza pipeline to predict sentiment in text. </p>
+                  <button>COMING SOON</button>
+                  <!-- <button onclick="window.open('https://huiling-titanic.herokuapp.com', '_blank')">SEE DEMO</button> -->
+                </div>
+              </div>
+            </a>
+
+            <a class="all ds web overlay"><img src="assets/project/drug.png"/>
+              <div class="fadedbox">
+                <div class="title text">
+                  <div class="icon">
+                    <i class="devicon-python-plain" style="font-size: 1.8em;opacity: 0.6;" alt="python" title="python"></i>           
+            <!-- <i class="devicon-html5-plain" style="font-size: 1.8em;opacity: 0.6;" alt="html" title="html"></i>
+            <i class="devicon-css3-plain" style="font-size: 1.8em;opacity: 0.6;" alt="css" title="css"></i> -->
+                            
+                    <i class="devicon-flask-original" style="font-size: 1.8em;opacity: 0.6;" alt="flask" title="flask"></i>          
+                 </div>
+                  <p><h4>Drug Entity Recognition</h4></p>
+                  <p>Used an open source Med7 model to recognise drugs in text. </p>
+                  <button>COMING SOON</button>
+                  <!-- <button onclick="window.open('https://huiling-titanic.herokuapp.com', '_blank')">SEE DEMO</button> -->
+                </div>
+              </div>
+            </a>
+
+            <a class="all ds web overlay"><img src="assets/project/titanic.png"/>
+              <div class="fadedbox">
+                <div class="title text">
+                  <div class="icon">
+                    <i class="devicon-python-plain" style="font-size: 1.8em;opacity: 0.6;" alt="python" title="python"></i>                    
+                    <i class="devicon-flask-original" style="font-size: 1.8em;opacity: 0.6;" alt="flask" title="flask"></i>          
+                    <i class="devicon-heroku-line" style="font-size: 1.8em;opacity: 0.6;" alt="heroku" title="heroku"></i>
+                  </div>
+                  <p><h4>Who will survive the Titanic?</h4></p>
+                  <p>Predicting survival in Titanic using Random Forest classifier with a cross-validation accuracy of 82.0%. </p>
+                  <button>COMING SOON</button>
+                  <!-- <button onclick="window.open('https://huiling-titanic.herokuapp.com', '_blank')">TRY NOW</button> -->
+                </div>
+              </div>
+            </a>
+
+            <a class="all chat overlay"><img src="assets/project/pianoacademybot.png"/>
+              <div class="fadedbox">
+                <div class="title text">
+                  <div class="icon">
+                    <img src="assets/icons/dialogflow.png" style="width:25px; height:25px;" alt="dialogflow" title="dialogflow"/>
+                    <img src="assets/icons/telegram.png" style="width:30px; height:25px;" alt="telegram" title="telegram"/>
+                    <!-- <i class="bi bi-telegram" style="font-size: 1.5em;"></i> -->
+                  </div>
+                  <p><h4>Piano Academy Bot</h4></p>
+                  <p>A chatbot for users to enquire, register, and cancel piano classes. </p>
+                  <button>COMING SOON</button>
+                  <!-- <button onclick="window.open('https://scratch.mit.edu/projects/89980197/fullscreen/', '_blank')">TRY NOW</button> -->
+                </div>
+              </div>
+            </a>
+
+
+            <a class="all game overlay"><img src="assets/project/catching_snowballs.png"/>
+              <div class="fadedbox">
+                <div class="title text">
+                  <div class="icon">
+                    <img src="assets/icons/scratch.png" style="width:25px; height:25px;" alt="scratch" title="scratch"/>
+                  </div>
+                  <p><h4>Catching Snowballs</h4></p>
+                  <p>A short mathematical game for elementary students. </p>
+                  <button onclick="window.open('https://scratch.mit.edu/projects/89980197/fullscreen/', '_blank')">TRY NOW</button>       
+              <!-- <p class="icon">
+                <i class="devicon-python-plain-wordmark" style="font-size: 2.5em;"></i>
+              </p> -->
+                </div>
+              </div>
+            </a>
+
+          </div>
+
+
+
+
+
+<div class='button-style'>
+  <a  href="#about"><button type="button">ABOUT ME</button></a>
+</div>
+</div>
+</div>
+
+
+
+<!-- about -->
+<div id="about">
+    <div class="container center">
+  <h3>About</h3>
+  <hr class="divider" />
+  <p>
+    <span class="text1">Highly experienced full-stacked data scientist.<br>
+      Loves anything that requires creativity.<br>
+    Always curious learning.</span>
+  <p>
+
+      ........
+      <p>
+      <b>Academic:</b><br>
+      Masters of Computing (Computer Science) @ National University of Singapore <i>- Distinction in 4 out of 10 modules (3 A+)</i> <br>
+      Specialist Postgraduate Diploma in Learning and Instruction @ National Institute of Education<br>
+      Specialist Diploma in Data Science (Artificial Intelligence) @ Singapore Polytechnic<br>
+      Bachelor of Chemistry & Biological Chemistry @ Nanyang Technological University<br>
+   
+      <p>
+        <b>Certificates:</b><br>
+        AWS Certified Machine Learning - Speciality<br>
+        AWS Certified Solutions Architect - Associate<br>
+    
+        
+<p>
+  ........
+  <p>
+  <b>Dabbled Tech:</b><br>
+
+    <i class="devicon-python-plain" style="font-size: 3em;opacity: 0.6;" alt="python" title="python"></i>  
+              
+          
+    
+    <i class="devicon-flask-original" style="font-size: 3em;opacity: 0.6;" alt="flask" title="flask"></i>
+          
+    <i class="devicon-django-plain" style="font-size: 3em;opacity: 0.6;" alt="django" title="django"></i>
+    <i class="devicon-react-original" style="font-size: 3em;opacity: 0.6;" alt="react" title="react"></i> 
+    
+    <i class="devicon-nextjs-plain" style="font-size: 3em;opacity: 0.6;" alt="nextjs" title="nextjs"></i> <br>
+
+
+   
+    
+          
+
+    
+    <i class="devicon-mysql-plain" style="font-size: 3em;opacity: 0.6;" alt="mysql" title="mysql"></i>
+    
+    <i class="devicon-sqlite-plain" style="font-size: 3em;opacity: 0.6;" alt="sqlite" title="sqlite"></i>
+    
+    <i class="devicon-postgresql-plain" style="font-size: 3em;opacity: 0.6;" alt="postgresql" title="postgresql"></i>
+    
+    <i class="devicon-neo4j-plain" style="font-size: 3em;opacity: 0.6;" alt="neo4j" title="neo4j"></i><br>
+
+ 
+
+    
+    <i class="devicon-github-original" style="font-size: 3em;opacity: 0.6;" alt="github" title="github"></i>
+
+    
+    <i class="devicon-gitlab-plain" style="font-size: 3em;opacity: 0.6;" alt="gitlab" title="gitlab"></i>
+
+    
+    <i class="devicon-bitbucket-original" style="font-size: 3em;opacity: 0.6;" alt="bitbucket" title="bitbucket"></i>
+
+    <i class="devicon-jira-plain" style="font-size: 3em;opacity: 0.6;" alt="jira" title="jira"></i>
+
+    
+    <i class="devicon-confluence-plain" style="font-size: 3em;opacity: 0.6;" alt="confluence" title="confluence"></i>
+    
+    <br>
+          
+
+    <i class="devicon-amazonwebservices-plain" style="font-size: 3em;opacity: 0.6;" alt="aws" title="aws"></i>
+          
+    <i class="devicon-androidstudio-plain" style="font-size: 3em;opacity: 0.6;" alt="andriodstudio" title="andriodstudio"></i> 
+
+    <i class="devicon-raspberrypi-line" style="font-size: 3em;opacity: 0.6;" alt="raspberrypi" title="raspberrypi"></i> 
+          
+
+
+    <i class="devicon-figma-plain" style="font-size: 3em;opacity: 0.6;" alt="figma" title="figma"></i>
+
+    
+    <i class="devicon-xd-plain" style="font-size: 3em;opacity: 0.6;" alt="adobexd" title="adobexd"></i> 
+
+    
+
+          
+          
+    
+        
+                 
+              
+
+  </p>
+
+
+
+
+
+
+  <div class='button-style'>
+    <a  href="#contact"><button type="button">STAY IN CONTACT</button></a>
+  </div>
+</div>
+</div>
+
+
+<!-- blog -->
+<!-- <div id="blog">
+    <div class="container center">
+  <h3>Blog</h3>
+  <hr class="divider" />
+  <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
+  <div class='button-style'>
+  <a  href="#about"><button type="button">ABOUT ME</button></a>
+</div>
+</div>
+</div> -->
+
+
+
+<!-- contact -->
+<div id="contact">
+    <div class="container center">
+  <h3>Contact Me</h3>
+  <hr class="divider" />
+  <p >
+    <span class="text1">Have an interesting idea? <br>
+       Reach me here (: </span><p>
+
+    <a href='https://www.linkedin.com/in/ng-hui-ling' target="_blank"><img src="assets/icons/linkedin-logo.png" width="50" height="50"></a>
+    <a href='https://github.com/nghuiling' target="_blank"><img src="assets/icons/github-logo.png" width="50" height="50"></a>
+
+    <!-- <a href='https://github.com/nghuiling' target="_blank"><img src="assets/icons/leetcode-logo.png" width="50" height="50"></a> -->
+  
+  </p>
+
+</div>
+
+<center>Copyright @ Ng Hui Ling 2024</center>
+
+
+
+        <!-- ajax JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+
+
+        </div>
+        </div>
+
     </div>
- </div>
-<br/>
-
-
-<!-- content -->
-<div class="container" >
-<b>Education:</b> <br>Bachelor in Chemistry & Biology Chemistry<br>Specialist Diploma in Data Science (Artificial Intelligence)<br>
-<br><b>Interest:</b> Data Science, building things, and many more.<br>
-<br><b>Programming Languages:</b> Python, JavaScript<br>
-<br>
-<br>
-
-<div class="newcontainer">
-  <div style="text-align:center">
-    <h2>Contact Me</h2>
-
-  </div>
-  <div class="newrow">
-
-      <form action="https://formspree.io/f/xrgrqpzo" method="POST">
-        <label for="fname">Email</label>
-        <input type="email" id="fname" name="_replyto" placeholder="Your email..">
-        </select>
-        <label for="subject">Message</label>
-        <textarea id="subject" name="subject" placeholder="Your message.." style="height:170px"></textarea>
-        <input type="submit" value="Submit">
-      </form>
-
-  </div>
-</div>
-</div>
-<br><br><br><br>
-
-
-<!-- Sample HTML Form -->
-
-
-
-
-
-
-
-
-
-<footer1>
-  <p>Copyright &copy; 2020-2021 Ng Hui Ling</p>
-</footer1>
-
-
-
-<!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/js/mdb.min.js"></script>
-
-</body>
+    </body>
 </html>
-
