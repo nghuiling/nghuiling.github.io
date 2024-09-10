@@ -298,7 +298,7 @@ padding-top: 5px;
 
 
 
-
+/* text */
 .text1 {
   font-size: 16px; /* Default size */
 }
@@ -314,3 +314,16 @@ padding-top: 5px;
       font-size: 22px; /* Size for even larger screens */
   }
 }
+
+
+/* footer */
+.footer {
+  /* position: fixed; */
+  left: 0;
+  bottom: 1;
+  width: 100%;
+  background-color:#946997;
+  color: white;
+  text-align: center;
+  padding: 4px 4px;
+  }
