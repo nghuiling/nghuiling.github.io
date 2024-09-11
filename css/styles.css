@@ -27,32 +27,60 @@ body {
 
   font-family: Open Sans;
   color: white;
-
-
 }
 
 
-.nav-bg {
-/*  background-color: rgba(255, 255, 255, 0.1);*/
-/*  background-color: #203060;*/
+/* remove blue outline when click on button/link */
 
+
+/* navigation */
+.navbar {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 10px;
+}
+
+
+
+.nav-item{
+  text-align: right;
+}
+
+
+.navbar button.navbar-toggler:hover {
+  border: none;
+  background-color: #af87b1;
 
 }
+
 
 .navbar-nav {
-  padding-left: 30px;
+  padding-left:30px;
   padding-top:20px;
 
 }
 
 .navbar-brand {
-  padding-left: 40px;
+  /* padding-left: 40px; */
   padding-top:20px;
+  align-items: center;
 }
 
 .nav-logo {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    padding-left: 10px;
+
+}
+
+.navbar-toggler:focus {
+  border: none;
+}
+
+
+
+.navbar-toggler:hover {
+  background-color: none;
+  text-decoration: none;
 }
 
 
@@ -67,8 +95,8 @@ body {
 
 .container {
   padding-top: 100px;
-/*  padding-left: 2%;
-  padding-right: 2%;*/
+ padding-left: 25px;
+  padding-right: 25px;
   min-height: 100vh;
   text-align: center;
 
@@ -77,7 +105,8 @@ body {
 
 
 .first {
-  padding-top:220px;
+  /* padding-top:220px; */
+  padding-top: min(20vh, 220px);
 }
 
 
@@ -140,11 +169,11 @@ button:hover {
     border-radius: 8px;
     font-size: 14px;
     font-weight: 500;
+
   }
   .btn:hover,.btn-active {
     color: #fff;
     background:#af87b1;
-
     /* border: 1px solid #eee; */
 
     -webkit-transform: translateY(3px);
@@ -164,14 +193,27 @@ button:hover {
     display: flex;
   }
   .gallery img {
-    width: 370px;
-    height: 250px;
     /* object-fit: cover; */
    /* transition: 0.3s ease-in-out; */
     border-radius: 8px;
     overflow: hidden;
     margin: 10px 10px;
   }
+
+
+  /* responsive */
+  .gallery img {
+    width: 300px;
+    height: 210px; /* Default size */
+  }
+  
+  @media (min-width: 450px) {
+    .gallery img {
+      width: 370px;
+      height: 250px; /* Size for larger screens */
+    }
+  }
+
 
   /* .gallery img:hover {
    transform: scale(1.1);
@@ -183,9 +225,6 @@ button:hover {
     width: 0%;
     opacity: 0;
   }
-
-
-
 
 
 /* https://www.w3docs.com/snippets/css/how-to-display-an-animated-text-over-an-image-on-hover-using-only-css3.html */
@@ -213,12 +252,28 @@ button:hover {
   -ms-transition: all 300ms ease-out;
   transition: all 300ms ease-out;
   opacity: 0;
-  width: 370px;
-  height: 250px;
   margin: 10px 10px;
   border-radius: 8px;
   /* padding: 130px 20px; */
 }
+
+
+
+  /* responsive */
+  .overlay .fadedbox  {
+    width: 300px;
+    height: 210px; /* Default size */
+  }
+  
+  @media (min-width: 450px) {
+    .overlay .fadedbox  {
+      width: 370px;
+      height: 250px; /* Size for larger screens */
+    }
+  }
+
+
+
 .overlay:hover .fadedbox {
   opacity: 1;
 }
@@ -236,7 +291,7 @@ button:hover {
   opacity: 0;
   transition-delay: 0.2s;
   transition-duration: 0.3s;
-  padding-top:15px;
+  padding-top:8px;
   padding-left:20px;
   padding-right:20px;
   padding-bottom:15px;
@@ -313,6 +368,40 @@ padding-top: 5px;
   .text1 {
       font-size: 22px; /* Size for even larger screens */
   }
+}
+
+
+/* text in the gallery img */
+.text2 {
+  font-size: 22px; /* Default size */
+  padding-bottom: 4px;
+  padding-top: 4px;
+}
+
+@media (min-width: 450px) {
+  .text2 {
+    padding-bottom: 4px;
+    padding-top: 20px;
+  }
+}
+.text3 {
+  font-size: 14px; /* Default size */
+  padding-bottom: 16px;
+}
+
+@media (min-width: 450px) {
+  .text3 {
+    padding-bottom: 20px;
+    padding-top: 2px;
+  }
+}
+
+.text-container {
+  max-width: 90%;
+  width: 900px;
+  margin: 20px auto;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 
