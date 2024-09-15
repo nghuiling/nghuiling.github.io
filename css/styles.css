@@ -159,7 +159,7 @@ button:hover {
   }
 
   .btn {
-    padding: 10px 20px;
+    padding: 8px 10px;
     margin: 5px 4px 4px 0;
     display: inline-block;
     background: #906f92;
@@ -171,6 +171,22 @@ button:hover {
     font-weight: 500;
 
   }
+
+  @media (min-width: 450px) {
+    .btn {
+      padding: 10px 20px;
+      margin: 5px 4px 4px 0;
+      display: inline-block;
+      background: #906f92;
+      color: #fff;
+      /* border: 1px solid #eee; */
+      transition: all 0.4s;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+
   .btn:hover,.btn-active {
     color: #fff;
     background:#af87b1;
@@ -203,8 +219,8 @@ button:hover {
 
   /* responsive */
   .gallery img {
-    width: 300px;
-    height: 210px; /* Default size */
+    width: 260px;
+    height: 190px; /* Default size */
   }
   
   @media (min-width: 450px) {
@@ -261,8 +277,8 @@ button:hover {
 
   /* responsive */
   .overlay .fadedbox  {
-    width: 300px;
-    height: 210px; /* Default size */
+    width: 260px;
+    height: 190px; /* Default size */
   }
   
   @media (min-width: 450px) {
@@ -355,7 +371,13 @@ padding-top: 5px;
 
 /* text */
 .text1 {
-  font-size: 16px; /* Default size */
+  font-size: 14px; /* Default size */
+}
+
+@media (min-width: 450px) {
+  .text1 {
+      font-size: 16px; /* Size for larger screens */
+  }
 }
 
 @media (min-width: 600px) {
@@ -373,26 +395,36 @@ padding-top: 5px;
 
 /* text in the gallery img */
 .text2 {
-  font-size: 22px; /* Default size */
+  font-size: 20px; /* Default size */
   padding-bottom: 4px;
   padding-top: 4px;
+  line-height: 24px;
 }
+
 
 @media (min-width: 450px) {
   .text2 {
-    padding-bottom: 4px;
+    font-size: 22px;
+    padding-bottom: 8px;
     padding-top: 20px;
+    line-height: 24px;
   }
 }
 .text3 {
   font-size: 14px; /* Default size */
-  padding-bottom: 16px;
+  padding-bottom: 12px;
+  line-height: 18px;
+  padding-top: 2px;
 }
 
 @media (min-width: 450px) {
   .text3 {
+    font-size: 14px;
     padding-bottom: 20px;
-    padding-top: 2px;
+    padding-top: 4px;
+    line-height: 18px;
+    padding-left: 1px;
+    padding-right: 1px;
   }
 }
 
