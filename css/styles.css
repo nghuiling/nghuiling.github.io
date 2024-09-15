@@ -440,11 +440,21 @@ padding-top: 5px;
 /* footer */
 .footer {
   /* position: fixed; */
-  left: 0;
-  bottom: 1;
-  width: 100%;
+  width: 10=0%;
   background-color:#946997;
   color: white;
   text-align: center;
-  padding: 4px 4px;
+  padding: 1px 1px;
+  }
+
+
+  @media (min-width: 450px) {
+    .footer {
+
+      width: 100%;
+      background-color:#946997;
+      color: white;
+      text-align: center;
+      padding: 1px 1px;
+      }
   }
