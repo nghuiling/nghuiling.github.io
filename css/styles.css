@@ -1,34 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap&display=swap');
 
-
-
-html {
-    min-height: 100%;
-
+/* Set font defaults at the :root level for consistent inheritance */
+:root {
+  --font-primary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
 }
 
-
-
+html {
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 /*for gradient background*/
-
 body {
   background: #203060; /* old browsers */
   background: -moz-linear-gradient(top, #203060 5%, #584880 70%, #856088 100%) repeat-x scroll 0% 0% #856088; /* firefox */
-    background: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(5%, #203060),
-        color-stop(60%, #584880),
-        color-stop(100%, #856088) 
-    ) repeat-x scroll 0% 0% #856088; /* webkit */
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(5%, #203060),
+      color-stop(60%, #584880),
+      color-stop(100%, #856088) 
+  ) repeat-x scroll 0% 0% #856088; /* webkit */
 
-
-  font-family: Open Sans;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-regular);
   color: white;
 }
-
 
 /* remove blue outline when click on button/link */
 
@@ -47,17 +52,41 @@ body {
 }
 
 
-.navbar button.navbar-toggler:hover {
+.navbar button.navbar-toggler {
   border: none;
-  background-color: #af87b1;
-
+  background-color: rgba(175, 135, 177, 0.0);
+  transition: background-color 0.3s ease;
 }
 
+.navbar button.navbar-toggler:hover {
+  border: none;
+  background-color: rgba(175, 135, 177, 0.2);
+}
+
+.navbar button.navbar-toggler:active,
+.navbar button.navbar-toggler[aria-expanded="true"] {
+  background-color: rgba(175, 135, 177, 0.3);
+  border: none;
+}
 
 .navbar-nav {
   padding-left:30px;
   padding-top:20px;
+}
 
+/* Media query for collapsed navbar on small screens */
+@media (max-width: 575.98px) {
+  .navbar-nav {
+    width: auto;
+    max-width: 200px;
+    margin-left: auto;
+    padding-right: 10px;
+    text-align: right;
+  }
+  
+  .navbar-collapse {
+    padding-top: 10px;
+  }
 }
 
 .navbar-brand {
@@ -74,9 +103,20 @@ body {
 
 .navbar-toggler:focus {
   border: none;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
+.navbar-toggler {
+  border: none !important;
+}
 
+.navbar-toggler:active, 
+.navbar-toggler:visited {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
 
 .navbar-toggler:hover {
   background-color: none;
@@ -133,7 +173,8 @@ button {
   border-radius: 30px;
   transition-duration: 0.3s;
   font-size: 15px;
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
 }
 
 button:hover {
@@ -164,12 +205,10 @@ button:hover {
     display: inline-block;
     background: #906f92;
     color: #fff;
-    /* border: 1px solid #eee; */
     transition: all 0.4s;
     border-radius: 8px;
     font-size: 14px;
-    font-weight: 500;
-
+    font-weight: var(--font-weight-medium);
   }
 
   @media (min-width: 450px) {
@@ -179,19 +218,16 @@ button:hover {
       display: inline-block;
       background: #906f92;
       color: #fff;
-      /* border: 1px solid #eee; */
       transition: all 0.4s;
       border-radius: 8px;
       font-size: 14px;
-      font-weight: 500;
+      font-weight: var(--font-weight-medium);
     }
   }
 
   .btn:hover,.btn-active {
     color: #fff;
     background:#af87b1;
-    /* border: 1px solid #eee; */
-
     -webkit-transform: translateY(3px);
     -ms-transform: translateY(3px);
     transform: translateY(3px); 
@@ -199,36 +235,59 @@ button:hover {
   .gallery {
     display: flex;
     justify-content: center;
-    width: fit-content;
-    max-width: 100%;
+    width: 100%;
+    max-width: 1200px;
     flex-wrap: wrap;
     margin: 25px auto;
-    /* gap: 14px; */
+    gap: 20px;
+    padding: 0 10px;
   }
-  .gallery a {
-    display: flex;
-  }
-  .gallery img {
-    /* object-fit: cover; */
-   /* transition: 0.3s ease-in-out; */
+  .gallery a.overlay {
+    display: block;
+    position: relative;
+    margin: 0;
+    width: 100%;
+    max-width: 300px;
     border-radius: 8px;
     overflow: hidden;
-    margin: 10px 10px;
+    text-decoration: none;
+  }
+  .gallery a.overlay img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.36/1;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+  }
+  .gallery a.overlay .fadedbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4d3a69;
+    border-radius: 8px;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms ease-out;
   }
 
 
   /* responsive */
-  .gallery img {
-    width: 260px;
-    height: 190px; /* Default size */
-  }
-  
   @media (min-width: 450px) {
-    .gallery img {
-      width: 370px;
-      height: 250px; /* Size for larger screens */
+    .gallery a.overlay {
+      max-width: 370px;
+    }
+    
+    .gallery a.overlay img {
+      aspect-ratio: 1.48/1;
     }
   }
+
 
 
   /* .gallery img:hover {
@@ -238,151 +297,33 @@ button:hover {
 
   .sets .hide,
   .sets .pophide {
-    width: 0%;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
     opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+    display: none !important;
   }
-
-
-/* https://www.w3docs.com/snippets/css/how-to-display-an-animated-text-over-an-image-on-hover-using-only-css3.html */
-.overlay {
-  /* cursor: pointer; */
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-.overlay .fadedbox {
-  display: flex;
-  justify-content: center;
-  width: fit-content;
-  max-width: 100%;
-  flex-wrap: wrap;
-  margin: 25px auto;
-  background-color: #4d3a69;
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #fff;
-  -webkit-transition: all 300ms ease-out;
-  -moz-transition: all 300ms ease-out;
-  -o-transition: all 300ms ease-out;
-  -ms-transition: all 300ms ease-out;
-  transition: all 300ms ease-out;
-  opacity: 0;
-  margin: 10px 10px;
-  border-radius: 8px;
-  /* padding: 130px 20px; */
-}
-
-
-
-  /* responsive */
-  .overlay .fadedbox  {
-    width: 260px;
-    height: 190px; /* Default size */
-  }
-  
-  @media (min-width: 450px) {
-    .overlay .fadedbox  {
-      width: 370px;
-      height: 250px; /* Size for larger screens */
-    }
-  }
-
-
-
-.overlay:hover .fadedbox {
-  opacity: 1;
-}
-.overlay .text {
-  -webkit-transition: all 300ms ease-out;
-  -moz-transition: all 300ms ease-out;
-  -o-transition: all 300ms ease-out;
-  -ms-transition: all 300ms ease-out;
-  transition: all 300ms ease-out;
-  transform: translateY(30px);
-  -webkit-transform: translateY(30px);
-}
-.overlay .title {
-  font-size: 14px;
-  opacity: 0;
-  transition-delay: 0.2s;
-  transition-duration: 0.3s;
-  padding-top:8px;
-  padding-left:20px;
-  padding-right:20px;
-  padding-bottom:15px;
-}
-.overlay:hover .title,
-.overlay:focus .title {
-  opacity: 1;
-  transform: translateY(0px);
-  -webkit-transform: translateY(0px);
-}
-
-.title button {
-  background-color: #946997;
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 8px;
-  transition-duration: 0.3s;
-  font-size: 14px;
-  font-weight: bold; 
-}
-
-
-.title button:hover {
-  background-color: #b17eb4; 
-  color: white;
-}
-
-.title .button-style {
-  padding: 20px;
-}
-
-.icon {
-padding-top: 5px;
- text-align: left;
- color: #bcadbd;
-}
-
-.icon img{
-  margin: 0px 0px;
-  padding-left:5px;
-
-
-
- }
-
-/* .date {
- padding-top:5px;
- text-align: left;
- color: #bcadbd;
- font-size:12px;
-} */
-
-
-/*  end of image gallery*/
-
 
 
 /* text */
 .text1 {
-  font-size: 14px; /* Default size */
+  font-size: 12px; /* Default size */
 }
 
 @media (min-width: 450px) {
   .text1 {
-      font-size: 16px; /* Size for larger screens */
+      font-size: 14px; /* Size for larger screens */
   }
 }
 
 @media (min-width: 600px) {
   .text1 {
-      font-size: 20px; /* Size for larger screens */
+      font-size: 18px; /* Size for larger screens */
   }
 }
 
@@ -395,36 +336,34 @@ padding-top: 5px;
 
 /* text in the gallery img */
 .text2 {
-  font-size: 20px; /* Default size */
-  padding-bottom: 4px;
-  padding-top: 4px;
-  line-height: 24px;
+  color: #fff;
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  margin: 10px 0;
+  text-align: center;
 }
 
 
 @media (min-width: 450px) {
   .text2 {
     font-size: 22px;
-    padding-bottom: 8px;
-    padding-top: 20px;
-    line-height: 24px;
+    margin: 12px 0;
+    text-align: center;
   }
 }
 .text3 {
-  font-size: 14px; /* Default size */
-  padding-bottom: 12px;
-  line-height: 18px;
-  padding-top: 2px;
+  color: #bcadbd;
+  font-weight: var(--font-weight-regular);
+  font-size: 13px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 @media (min-width: 450px) {
   .text3 {
-    font-size: 14px;
-    padding-bottom: 20px;
-    padding-top: 4px;
-    line-height: 18px;
-    padding-left: 1px;
-    padding-right: 1px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 22px;
   }
 }
 
@@ -458,3 +397,233 @@ padding-top: 5px;
       padding: 1px 1px;
       }
   }
+
+.view-project-btn {
+  display: inline-block;
+}
+
+
+.overlay:hover .view-project-btn {
+  display: inline-block;
+}
+
+/* Project page styles */
+.project-header {
+  padding: 30px 0;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-icons {
+  margin: 20px 0;
+}
+
+.tech-icons i, .tech-icons img {
+  font-size: 2.5em;
+  margin: 0 10px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.tech-icons i:hover, .tech-icons img:hover {
+  opacity: 1;
+}
+
+.project-card {
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.back-button {
+  background-color: #946997;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 20px;
+}
+
+.back-button:hover {
+  background-color: #b17eb4;
+
+}
+
+.project-section {
+  margin-bottom: 50px;
+}
+
+.project-details-card {
+  padding: 0 25px 25px 25px;
+}
+
+.section-title {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.section-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 30px 0;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.lead {
+  font-weight: var(--font-weight-light);
+}
+
+.fw-bold {
+  font-weight: var(--font-weight-bold) !important;
+}
+
+/* Responsive gallery and overlay adjustments */
+@media (max-width: 320px) {
+  .gallery {
+    width: 100%;
+    gap: 15px;
+  }
+  
+  .gallery img, 
+  .gallery a,
+  .overlay .fadedbox {
+    width: 100%;
+    min-height: 200px;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 449px) {
+  .gallery img,
+  .gallery a,
+  .overlay .fadedbox {
+    width: 100%;
+  }
+}
+
+/* Fix any remaining overlay issues */
+.gallery a {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+  text-decoration: none !important;
+}
+
+.overlay {
+  position: static;
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Gallery hover effect */
+.gallery a.overlay:hover .fadedbox {
+  opacity: 1;
+}
+
+.gallery a.overlay .text {
+  transition: all 300ms ease-out;
+  transform: translateY(30px);
+  width: 100%;
+}
+
+.gallery a.overlay .title {
+  font-size: 14px;
+  opacity: 0;
+  transition-delay: 0.1s;
+  transition-duration: 0.3s;
+  padding: 8px 20px 15px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.gallery a.overlay:hover .title,
+.gallery a.overlay:focus .title {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/* Button and icon styles */
+.title button, .view-project-btn {
+  background-color: #946997;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.title button:hover, .view-project-btn:hover {
+  background-color: #b17eb4; 
+  color: white;
+}
+
+.title .button-style {
+  padding: 20px;
+}
+
+.icon {
+  padding-top: 5px;
+  text-align: center;
+  color: #bcadbd;
+  width: 100%;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon img {
+  margin: 0px 5px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.icon i {
+  display: inline-block;
+  margin: 0px 5px;
+}
+
+/* Custom styles for Piano Bot page */
+.functionality-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.functionality-item {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.functionality-item:last-child {
+  border-bottom: none;
+}
